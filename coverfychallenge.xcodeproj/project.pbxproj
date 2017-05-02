@@ -18,6 +18,8 @@
 		3667BA831EB22A580033E819 /* AppSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3667BA821EB22A580033E819 /* AppSingleton.swift */; };
 		3667BA851EB22ACA0033E819 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3667BA841EB22ACA0033E819 /* Post.swift */; };
 		3667BA871EB22B670033E819 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3667BA861EB22B670033E819 /* Comment.swift */; };
+		366B282B1EB85DB0004FFF2F /* WebServiceCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B282A1EB85DB0004FFF2F /* WebServiceCommunication.swift */; };
+		366B282D1EB85FC9004FFF2F /* ParseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B282C1EB85FC9004FFF2F /* ParseJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		3667BA821EB22A580033E819 /* AppSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSingleton.swift; sourceTree = "<group>"; };
 		3667BA841EB22ACA0033E819 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3667BA861EB22B670033E819 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		366B282A1EB85DB0004FFF2F /* WebServiceCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceCommunication.swift; sourceTree = "<group>"; };
+		366B282C1EB85FC9004FFF2F /* ParseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseJSON.swift; sourceTree = "<group>"; };
 		544150C551B93B3B75B2FFEF /* Pods_coverfychallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coverfychallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		553B58FC1AEB69B36BEF0622 /* Pods-coverfychallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coverfychallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coverfychallenge/Pods-coverfychallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +126,8 @@
 			children = (
 				3667BA801EB229E30033E819 /* Singleton */,
 				3667BA811EB229EF0033E819 /* ClassModelDB */,
+				366B282A1EB85DB0004FFF2F /* WebServiceCommunication.swift */,
+				366B282C1EB85FC9004FFF2F /* ParseJSON.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -284,9 +290,11 @@
 			files = (
 				3667BA831EB22A580033E819 /* AppSingleton.swift in Sources */,
 				362B4CD81EB2267A00728C72 /* DetailViewController.swift in Sources */,
+				366B282D1EB85FC9004FFF2F /* ParseJSON.swift in Sources */,
 				362B4CD61EB2267A00728C72 /* MasterViewController.swift in Sources */,
 				3667BA871EB22B670033E819 /* Comment.swift in Sources */,
 				3667BA851EB22ACA0033E819 /* Post.swift in Sources */,
+				366B282B1EB85DB0004FFF2F /* WebServiceCommunication.swift in Sources */,
 				362B4CD41EB2267A00728C72 /* AppDelegate.swift in Sources */,
 				3667BA7A1EB227F00033E819 /* AppConstants.swift in Sources */,
 			);

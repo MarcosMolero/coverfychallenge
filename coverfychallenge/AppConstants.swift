@@ -10,7 +10,7 @@ import Foundation
 
 class AppConstants {
     
-    struct AppConnection {
+    struct appConnection {
         static let WS_URL_POSTS     :String = "https://jsonplaceholder.typicode.com/posts"
         static let WS_URL_COMMENTS  :String = "https://jsonplaceholder.typicode.com/comments"
     }

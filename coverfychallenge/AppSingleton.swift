@@ -11,7 +11,12 @@ import Foundation
 class AppSingleton {
     static let sharedInstance   :AppSingleton = AppSingleton()
     
+    var listOfPost      :[Post]
+    var listOfComment   :[Comment]
+    
+    
     init() {
-        
+        self.listOfPost     = [Post]()
+        self.listOfComment  = [Comment]()
     }
 }

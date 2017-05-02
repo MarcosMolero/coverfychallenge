@@ -16,7 +16,11 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let wsc = WebServiceCommunication()
+        wsc.getComments()
+        
+        
         navigationItem.leftBarButtonItem = editButtonItem
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
@@ -44,7 +48,6 @@ class MasterViewController: UITableViewController {
     }
 
     // MARK: - Segues
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -58,7 +61,6 @@ class MasterViewController: UITableViewController {
     }
 
     // MARK: - Table View
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
