@@ -76,6 +76,8 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
+        
+        
         cell.textLabel!.text = instanceAppSingleton.listOfPost[indexPath.row].title
         
         //TODO: Añadir primeros 80 carácteres del body.
