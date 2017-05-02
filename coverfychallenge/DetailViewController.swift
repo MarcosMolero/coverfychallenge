@@ -10,22 +10,19 @@ import UIKit
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // MARK: - IBOutlet var
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-
-    func configureView() {
-        if let detail = detailItem {
-            if let title = titleLabel {
-                title.text = detail.title
-            }
-            
-            if let body = bodyLabel {
-                body.text = detail.body
-            }
+    
+    // MARK: - Global var
+    var detailItem: Post? {
+        didSet {
+            configureView()
         }
     }
 
+    // MARK: - Override Func
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -38,9 +35,23 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
+    // MARK: - Support Func
+    func configureView() {
+        if let detail = detailItem {
+            if let title = titleLabel {
+                title.text = detail.title
+            }
+            
+            if let body = bodyLabel {
+                body.text = detail.body
+            }
+        }
+    }
+    
+    // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addComment" {
                 let post = detailItem
@@ -49,7 +60,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    // MARK: TableView
+    // MARK: - UITableView Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return detailItem!.listOfComments.count
     }
@@ -62,13 +73,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
-    
-    var detailItem: Post? {
-        didSet {
-            configureView()
-        }
-    }
-
 
 }
 

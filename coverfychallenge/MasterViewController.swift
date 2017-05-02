@@ -10,10 +10,12 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
+    // MARK: - Global var
     var detailViewController: DetailViewController? = nil
     let utilActivityIndicator: UtilActivityIndicator = UtilActivityIndicator()
     let instanceAppSingleton = AppSingleton.sharedInstance
 
+    // MARK: - Override Func
     override func viewDidLoad() {
         super.viewDidLoad()
         utilActivityIndicator.startActivityIndicator(utilActivityIndicator.showActivityIndicator(view))
@@ -39,11 +41,13 @@ class MasterViewController: UITableViewController {
         
     }
     
+    // MARK: - Support Func
     func downloadContent() {
         NotificationCenter.default.addObserver(self, selector: #selector(MasterViewController.PostsAvailable), name: NSNotification.Name(rawValue: postOk), object: nil)
         
         let webServiceCommunication :WebServiceCommunication = WebServiceCommunication()
         webServiceCommunication.getPosts()
+        
     }
     
     func PostsAvailable() {
@@ -65,26 +69,25 @@ class MasterViewController: UITableViewController {
                 }
             }
         }
+        
         self.utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
         self.tableView.reloadData()
+        
     }
 
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let post = instanceAppSingleton.listOfPost[indexPath.row]
-                
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = post
-                
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftBarButtonItem             = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
+                controller.detailItem = instanceAppSingleton.listOfPost[indexPath.row]
             }
         }
     }
 
-    // MARK: - Table View
+    // MARK: - UITableView Delegate
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -95,7 +98,6 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        //TODO: Añadir primeros 80 carácteres del body.
         cell.textLabel!.text = instanceAppSingleton.listOfPost[indexPath.row].title
         
         return cell

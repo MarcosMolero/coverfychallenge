@@ -12,7 +12,6 @@ import UIKit
 class UtilAlertManagement {
     
     static func commentNotValid(_ actualViewController: UIViewController) {
-        
         let alert = UIAlertController(  title: "ALERT",
                                         message: "Some fields are empty",
                                         preferredStyle: UIAlertControllerStyle.alert)

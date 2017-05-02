@@ -34,8 +34,7 @@ class WebServiceCommunication {
                     print(error)
                     break
                 }
-        }
-        
+        }   
     }
     
     func getComments() {

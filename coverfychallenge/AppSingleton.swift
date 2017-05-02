@@ -14,7 +14,6 @@ class AppSingleton {
     var listOfPost      :[Post]
     var listOfComment   :[Comment]
     
-    
     init() {
         self.listOfPost     = [Post]()
         self.listOfComment  = [Comment]()
