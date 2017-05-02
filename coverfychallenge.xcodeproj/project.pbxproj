@@ -22,6 +22,8 @@
 		366B282D1EB85FC9004FFF2F /* ParseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B282C1EB85FC9004FFF2F /* ParseJSON.swift */; };
 		3681753C1EB8927E006D5BAF /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3681753B1EB8927E006D5BAF /* CustomCell.swift */; };
 		3681753E1EB8ADEC006D5BAF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3681753D1EB8ADEC006D5BAF /* AddViewController.swift */; };
+		3695D9091EB8E7100075E5BB /* UtilActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695D9081EB8E7100075E5BB /* UtilActivityIndicator.swift */; };
+		3695D90B1EB8E7440075E5BB /* UtilAlertManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695D90A1EB8E7440075E5BB /* UtilAlertManagement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		366B282C1EB85FC9004FFF2F /* ParseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseJSON.swift; sourceTree = "<group>"; };
 		3681753B1EB8927E006D5BAF /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		3681753D1EB8ADEC006D5BAF /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		3695D9081EB8E7100075E5BB /* UtilActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilActivityIndicator.swift; sourceTree = "<group>"; };
+		3695D90A1EB8E7440075E5BB /* UtilAlertManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilAlertManagement.swift; sourceTree = "<group>"; };
 		544150C551B93B3B75B2FFEF /* Pods_coverfychallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coverfychallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		553B58FC1AEB69B36BEF0622 /* Pods-coverfychallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coverfychallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coverfychallenge/Pods-coverfychallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				3667BA791EB227F00033E819 /* AppConstants.swift */,
+				3695D9081EB8E7100075E5BB /* UtilActivityIndicator.swift */,
+				3695D90A1EB8E7440075E5BB /* UtilAlertManagement.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -304,7 +310,9 @@
 				3667BA851EB22ACA0033E819 /* Post.swift in Sources */,
 				366B282B1EB85DB0004FFF2F /* WebServiceCommunication.swift in Sources */,
 				362B4CD41EB2267A00728C72 /* AppDelegate.swift in Sources */,
+				3695D9091EB8E7100075E5BB /* UtilActivityIndicator.swift in Sources */,
 				3667BA7A1EB227F00033E819 /* AppConstants.swift in Sources */,
+				3695D90B1EB8E7440075E5BB /* UtilAlertManagement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

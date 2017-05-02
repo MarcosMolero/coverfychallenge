@@ -15,17 +15,22 @@ class AddViewController: UIViewController {
     @IBOutlet weak var bodyField: UITextField!
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
-        print("Data is saved!")
-        let comment :Comment = Comment()
-        comment.postId  = (selectedPost?.id)!
-        comment.name    = nameField.text!
-        comment.email   = emailField.text!
-        comment.body    = bodyField.text!
-        comment.id      = (selectedPost?.listOfComments.count)! + 1
         
-        selectedPost?.listOfComments.append(comment)
-        
-        self.dismiss(animated: true, completion: nil)
+        if (nameField.text?.isEmpty)! || (emailField.text?.isEmpty)! || (bodyField.text?.isEmpty)! {
+            UtilAlertManagement.commentNotValid(self)
+        } else {
+            
+            let comment :Comment = Comment()
+            comment.postId  = (selectedPost?.id)!
+            comment.name    = nameField.text!
+            comment.email   = emailField.text!
+            comment.body    = bodyField.text!
+            comment.id      = (selectedPost?.listOfComments.count)! + 1
+            
+            selectedPost?.listOfComments.append(comment)
+            
+            UtilAlertManagement.commentSaved(self)
+        }        
     }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {

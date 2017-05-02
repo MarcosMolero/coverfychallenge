@@ -11,10 +11,12 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
+    let utilActivityIndicator: UtilActivityIndicator = UtilActivityIndicator()
     let instanceAppSingleton = AppSingleton.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        utilActivityIndicator.startActivityIndicator(utilActivityIndicator.showActivityIndicator(view))
         
         if instanceAppSingleton.listOfPost.isEmpty {
             downloadContent()
@@ -63,7 +65,7 @@ class MasterViewController: UITableViewController {
                 }
             }
         }
-        
+        self.utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
         self.tableView.reloadData()
     }
 

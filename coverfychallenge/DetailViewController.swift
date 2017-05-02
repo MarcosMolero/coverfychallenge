@@ -46,8 +46,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let post = detailItem
                 let controller = (segue.destination as! UINavigationController).topViewController as! AddViewController
                 controller.selectedPost = post
-//                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-
         }
     }
     
