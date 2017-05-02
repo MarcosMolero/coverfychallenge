@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 let connectionFailure   :String = "com.marcosmolero.connectionFailure"
+let postOk              :String = "com.marcosmolero.postOk"
 
 class WebServiceCommunication {
     
@@ -24,9 +25,7 @@ class WebServiceCommunication {
                 case .success:
                     if ((response.response?.statusCode)! >= 200 && (response.response?.statusCode)! < 300) {
                         let jsonObject = JSON(data: response.data!)
-                        
-                        print(jsonObject)
-                        
+                        ParseJSON.parsePosts(jsonObject)
                     }
                     break
                 case .failure(let error):
@@ -48,9 +47,7 @@ class WebServiceCommunication {
                 case .success:
                     if ((response.response?.statusCode)! >= 200 && (response.response?.statusCode)! < 300) {
                         let jsonObject = JSON(data: response.data!)
-                        
-                        print(jsonObject)
-                        
+                        ParseJSON.parseComments(jsonObject)                        
                     }
                     break
                 case .failure(let error):
