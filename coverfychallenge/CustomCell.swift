@@ -10,8 +10,8 @@ import UIKit
 
 class CustomCell: UITableViewCell {
 
-    @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var comment: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

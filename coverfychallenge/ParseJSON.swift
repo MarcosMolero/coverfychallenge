@@ -39,6 +39,7 @@ class ParseJSON {
             
             instanceAppSingleton.listOfComment.append(comment)
         }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: commentOk), object: self)
     }
     
 }

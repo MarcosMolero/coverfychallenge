@@ -12,6 +12,7 @@ import SwiftyJSON
 
 let connectionFailure   :String = "com.marcosmolero.connectionFailure"
 let postOk              :String = "com.marcosmolero.postOk"
+let commentOk           :String = "com.marcosmolero.commentOk"
 
 class WebServiceCommunication {
     

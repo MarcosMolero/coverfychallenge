@@ -43,9 +43,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! CustomCell
-               
-        cell.email.text = "Hello@mytest.com"
-        cell.comment.text = "This is a static test"
+        
+        cell.emailLabel.text    = detailItem?.listOfComments[indexPath.row].email
+        cell.commentLabel.text  = detailItem?.listOfComments[indexPath.row].body
         
         return cell
     }

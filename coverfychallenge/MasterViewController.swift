@@ -42,10 +42,28 @@ class MasterViewController: UITableViewController {
         
         let webServiceCommunication :WebServiceCommunication = WebServiceCommunication()
         webServiceCommunication.getPosts()
-        webServiceCommunication.getComments()
     }
     
     func PostsAvailable() {
+        NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: postOk),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MasterViewController.CommentsAvailable), name: NSNotification.Name(rawValue: commentOk), object: nil)
+        
+        let webServiceCommunication :WebServiceCommunication = WebServiceCommunication()
+        webServiceCommunication.getComments()
+
+    }
+    
+    func CommentsAvailable() {
+        NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: commentOk),object: nil)
+        
+        for post in instanceAppSingleton.listOfPost {
+            for comment in instanceAppSingleton.listOfComment {
+                if post.id == comment.postId {
+                    post.listOfComments.append(comment)
+                }
+            }
+        }
+        
         self.tableView.reloadData()
     }
 
@@ -75,12 +93,8 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        
-        
-        cell.textLabel!.text = instanceAppSingleton.listOfPost[indexPath.row].title
-        
         //TODO: Añadir primeros 80 carácteres del body.
+        cell.textLabel!.text = instanceAppSingleton.listOfPost[indexPath.row].title
         
         return cell
     }
