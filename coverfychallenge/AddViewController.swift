@@ -16,13 +16,23 @@ class AddViewController: UIViewController {
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
         print("Data is saved!")
-        // TODO: Añadir los datos en el post.listOfComments correspondiente
+        let comment :Comment = Comment()
+        comment.postId  = (selectedPost?.id)!
+        comment.name    = nameField.text!
+        comment.email   = emailField.text!
+        comment.body    = bodyField.text!
+        comment.id      = (selectedPost?.listOfComments.count)! + 1
         
+        selectedPost?.listOfComments.append(comment)
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    var selectedPost    :Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
